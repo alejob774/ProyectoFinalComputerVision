@@ -23,12 +23,16 @@ Desarrollar un sistema automatizado que detecte, analice y visualice la trayecto
 ```
 proyecto-baloncesto/
 │
-├── 📊 predict_video_to_excel.py    # Procesamiento principal del video
-├── 🎨 visualizer.py                # Generación de visualizaciones
-├── 🔗 conjunto.py                  # Integración final de resultados
 ├── 🚀 main.py                      # Interfaz unificada de ejecución
 ├── ⚙️ best.pt                      # Modelo YOLOv8 entrenado
-└── 📁 datasets/                    # Datasets de entrenamiento
+├── 📁 modulos/
+   ├── 📊 predict_video_to_excel.py    # Procesamiento principal del video
+   ├── 🎨 visualizer.py                # Generación de visualizaciones
+   └── 🔗 conjunto.py                  # Integración final de resultados
+├── 📁 training/
+   ├── train_yolo.py       # Entrenamiento YoloV8 desde dataset en .zip
+   └── other_training.py   # Reentrenamiento de YoloV8 desde modelo y dataset
+└── ⚙️ requirements.txt                    # Requirimientos para el codigo
 ```
 
 ## 🔄 Flujo de Trabajo Paso a Paso
