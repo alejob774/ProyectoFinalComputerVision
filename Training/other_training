@@ -1,0 +1,19 @@
+from ultralytics import YOLO
+
+# Entrenar modelo YOLOv8
+if __name__ == "__main__":
+    # 1. Cargar el modelo entrenado (best.pt) para fine-tuning
+    model = YOLO('best.pt') 
+    
+    # 2. Iniciar el entrenamiento con los parámetros optimizados
+    model.train(
+        # CORRECCIÓN DE RUTA: Usa la ruta completa de tu data.yaml
+        data='C:/Users/Alejandro/Downloads/Basket_Project/Datasets/Basketball.v3i.yolov8/data.yaml',  
+        epochs=300,     # Suficientes épocas, pero la paciencia lo detendrá antes si es óptimo
+        patience=20,    # Parada Temprana: se detiene si no hay mejora en 20 épocas
+        imgsz=640,
+        batch=16,
+        lr0=0.0001,     # Tasa de aprendizaje inicial baja (para Transfer Learning)
+        name='yolov8_balon_aro_finetune_optimizado', # Nuevo nombre para la nueva ejecución
+        project='runs/train'
+    )
